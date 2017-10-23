@@ -1,0 +1,46 @@
+﻿@charset "utf-8";
+/* 正式样式 */
+
+#wrap {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.page {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.page1 {
+	background: red;
+}
+
+.page2 {
+	background: yellow;
+}
+
+.page3 {
+	background: green;
+}
+
+.page4 {
+	background: black;
+}
+
+.page5 {
+	background: grey;
+}
+
+.box {
+	text-align: center;
+	margin: 50px 0;
+}
+
+.box img {
+	max-width: 90%;
+}
