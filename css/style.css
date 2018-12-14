@@ -1,46 +1,300 @@
-﻿@charset "utf-8";
-/* 正式样式 */
+* {
+	margin: 0;
+	padding: 0;
+}
 
-#wrap {
+body,
+html {
+	height: 100%;
+}
+
+body {
+	overflow: hidden;
+	margin: 0px;
+	padding: 0px;
+	background-color: #000;
+	font-size: 12px;
+	font-family: "微软雅黑";
+	perspective: 800px;
+	perspective-origin: 50% 0px;
+	-webkit-perspective: 800px;
+	-webkit-perspective-origin-x: 50%;
+	-webkit-perspective-origin-y: 0px;
+}
+
+header {
+	display: block;
+	width: 100%;
+	height: 70px;
+	position: fixed;
+	z-index: 1;
+	background-color: #000;
+	transform-origin: 50% 0% 0px;
+	-webkit-transform-origin: 50% 0%;
+	-webkit-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+	-webkit-transform: rotateX(30deg) translateY(-100%) translateY(6px);
+	transform: rotateX(30deg) translateY(-100%) translateY(6px);
+}
+
+header ul {
+	list-style: none;
+	margin-left: 130px;
+	margin-top: 30px;
+}
+
+header ul li {
+	cursor: pointer;
+	display: block;
+	float: left;
+	margin-right: 60px;
+	font-size: 12px;
+	color: #999;
+	transition: all 1s ease;
+}
+
+header ul li a {
+	text-decoration: none;
+}
+
+header ul li:hover {
+	color: #fff;
+	transition: all 1s ease;
+}
+
+.hovercontact {
+	position: absolute;
+	display: none;
+	top: 18px;
+	left: 185px;
+	background-color: rgb(34, 34, 34);
+	height: 36px;
+	width: 320px;
+	font-size: 0.8em;
+	color: white;
+	border-radius: 3px;
+}
+
+.hovercontact img {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.mail {
+	margin-left: 136px;
+}
+
+.hovercontact p {
+	margin-top: 10px;
+	margin-left: 36px;
+}
+
+.mail-text {
+	margin-top: -16px !important;
+	margin-left: 175px !important;
+}
+
+.logo {
+	width: 50px;
+	height: 50px;
+	left: 48.5%;
+	top: 15px;
+	position: absolute;
+	z-index: 1000;
+}
+
+.find-me {
+	width: 250px;
+	height: 36px;
+	position: absolute;
+	margin-left: 50%;
+	margin-top: -18px;
+}
+
+.find-me p {
+	color: grey;
+	margin-top: 20px;
+	position: absolute;
+	font-style: normal;
+}
+
+.git {
+	width: 30px;
+	height: 30px;
+	margin-left: 66px;
+	margin-top: 12px;
+}
+
+.blog {
+	width: 30px;
+	height: 30px;
+	margin-left: 33px;
+	margin-top: 12px;
+}
+
+
+/* 弹出header的横栏 */
+
+.barre {
+	width: 100%;
+	height: 10px;
+	background-color: black;
+	top: 0px;
+	z-index: 1000;
+	position: absolute;
+}
+
+.barre img {
+	width: 24px;
+	margin-top: 12px;
+	margin-left: 49%;
+}
+
+
+/* 主页 */
+
+#homepage {
+	visibility: visible;
 	position: relative;
+	overflow: hidden;
 	width: 100%;
 	height: 100%;
+	z-index: 999;
+	background-color: #000;
+	transform-origin: 50% 0px 0px;
+	-webkit-transform-origin: 50% 0%;
+	-webkit-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+
+.homepage-block {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+	visibility: hidden;
+	opacity: 0;
+	z-index: 1000;
+	background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.65098) 100%);
+	transition: all 0.5s ease;
+}
+
+
+/* 欢迎页 */
+
+.welcome {
+	visibility: visible;
+	position: relative;
+	overflow: hidden;
+	margin: 0px;
+	padding: 0px;
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-color: #999;
+	transform-origin: 50% 0px 0px;
+	transition: all 0.5s ease;
+	background-image: url(../images/fond4.jpg);
+	background-size: cover;
+}
+
+.port {
+	position: absolute;
+	width: 100%;
+	top: 56px;
+	text-align: center
+}
+
+.welcome-main {
+	top: 54%;
+	position: absolute;
+	height: 600px;
+	width: 1300px;
+	left: 50%;
+	margin-left: -650px;
+	margin-top: -300px;
+}
+
+.parallax-viewport {
+	position: relative;
 	overflow: hidden;
 }
 
-.page {
+.parallax-layer {
+	position: absolute;
+}
+
+.enter {
+	cursor: pointer;
+	overflow: hidden;
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	background-color: #000;
+	bottom: 20px;
+	left: 50%;
+	margin-left: -50px;
+	border-radius: 50px;
+	transition: all 0.5s ease;
+}
+
+.enter img {
+	margin-left: 27px;
+	margin-top: -27px;
+	transition: all 0.5s ease;
+}
+
+.enter:hover {
+	background-color: #E7E5E5;
+	transition: all 0.5s ease;
+}
+
+.enter:hover img {
+	margin-top: 40px;
+	transition: all 0.5s ease;
+}
+
+.clearfix {
+	clear: both;
+}
+
+
+/* 作品页 */
+
+.profile {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	background-color: #eee;
+	transform-origin: 50% 0px 0px;
+	transition: all 0.5s ease;
+	border-right: 10px solid #000;
+	box-sizing: border-box;
+}
+
+.block {
+	display: none;
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 100%;
-	height: 100%;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(29, 29, 29, 0.5);
+	z-index: 1000;
 }
 
-.page1 {
-	background: red;
-}
-
-.page2 {
-	background: yellow;
-}
-
-.page3 {
-	background: green;
-}
-
-.page4 {
-	background: black;
-}
-
-.page5 {
-	background: grey;
-}
-
-.box {
-	text-align: center;
-	margin: 50px 0;
-}
-
-.box img {
-	max-width: 90%;
+#video {
+	display: none;
+	position: fixed;
+	width: 775px;
+	height: 430px;
+	top: 50%;
+	left: 50%;
+	margin-left: -387.5px;
+	margin-top: -215px;
+	z-index: 1000;
 }

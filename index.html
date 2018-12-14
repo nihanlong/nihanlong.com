@@ -1,52 +1,200 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>壁纸浏览</title>
-		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui" />
-		<meta name="format-detection" content="email=no" />
-		<meta name="format-detection" content="address=no" />
-		<meta name="format-detection" content="telephone=no" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="favicon.ico" />
+		<link rel="bookmark" href="favicon.ico" />
+		<title>倪韩龙的作品集</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" href="css/dasky.min.css" />
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.parallax.min.js"></script>
+		<script src="js/anim.js"></script>
+		<script src="js/behavior.js"></script>
+		<script type="text/javascript" src="js/jmpress.min.js"></script>
+		<script type="text/javascript" src="js/dasky.eval.js"></script>
+		<script type="text/javascript" src="js/video.js" ></script>
+		<script type="text/javascript">
+			$(function() {
+				$('#dasky').Dasky()
+			});
+		</script>
 
-		<link rel="stylesheet" href="css/reset.css" />
-		<link rel="stylesheet" href="css/style.css" />
-		<script type="text/javascript" src="js/pageSwitch.js"></script>
 	</head>
 
 	<body>
-		<div id="wrap">
-			<div id="pages">
-				<div class="page page1">
-					<div class="box"><img src="img/1.jpg" alt="111" /></div>
+		<header>
+			<ul id="header-list">
+				<li>联系我
+					<div class="hovercontact">
+						<img src="images/phone.png">
+						<p>18641146235</p>
+						<img src="images/mail.png" class="mail">
+						<p class="mail-text">842752344@qq.com</p>
+					</div>
+				</li>
+				<li class="header-portfolio">个人作品</li>
+				<li class="header-jinli">以往经历</li>
+				<li>
+					<a href="#welcome">
+						<img src="images/logo.png" alt="" class="logo">
+					</a>
+				</li>
+				<li>
+					<div class="find-me">
+						<p>找到我</p>
+						<a href="https://github.com/nihanlong" target="blank">
+							<img src="images/git.png" class="git">
+						</a>
+						<a href="https://nihanlong.github.io" target="blank">
+							<img src="images/blog.png" class="blog">
+						</a>
+					</div>
+				</li>
+			</ul>
+		</header>
+		<div class="barre">
+			<img src="images/menuopen.png" alt="">
+		</div>
+		<div id="homepage">
+			<div id="homepage-body" style="width:100%;">
+				<div class="welcome">
+					<div class="port">
+						<img src="images/portfolio.png" alt="">
+					</div>
+					<div id="scene" class="welcome-main">
+						<div class="parallax-layer"><img src="images/fond5.png" style="width:1200px; height:730px;"></div>
+						<div class="parallax-layer"><img src="images/fond4.png" style="width:1100px; height:669px;"></div>
+						<div class="parallax-layer"><img src="images/fond3.png" style="width:1000px; height:608px;"></div>
+						<div class="parallax-layer"><img src="images/fond2.png" style="width:900px; height:547px;"></div>
+						<div class="parallax-layer"><img src="images/fond1.png" style="width:800px; height:487px;"></div>
+					</div>
+					<div class="enter">
+						<img src="images/enter.png" alt="">
+					</div>
 				</div>
-				<div class="page page2">
-					<div class="box"><img src="img/2.jpg" alt="" /></div>
-				</div>
-				<div class="page page3">
-					<div class="box"><img src="img/3.jpg" alt="" /></div>
-				</div>
-				<div class="page page4">
-					<div class="box"><img src="img/4.jpg" alt="" /></div>
+
+				<div class="profile">
+					<div id="dasky">
+						<!-- 2017 -->
+						<div class="step year">
+							<div class="dsk-titlenode">2017</div>
+							<div class="dsk-content">
+								<p class="dsk-year-info">大四，使用Unity开发了4款游戏，其中三款包含硬件交互。</p>
+							</div>
+						</div>
+						<div class="step">
+							<div class="dsk-circle">05/28</div>
+							<h2 class="dsk-circle-title">MOBA游戏</h2>
+							<div class="dsk-content">
+								<div class="dsk-info">
+									<h2>MOBA游戏</h2>
+									<p>该游戏采用MOBA游戏的经典玩法，摄像机可以跟随角色，并且可以缩放和旋转；角色可以灵活转向和移动，可以进行普通攻击和施放多种多样的技能；敌方角色能智能判断场上局势，并进行攻击、施放技能、逃跑等操作；小兵可以寻路，会沿着规定路线行走，并且会攻击进入攻击范围内的敌人；防御塔可以锁定进入攻击范围内的敌人并进行攻击。</p>
+									<a href="#" class="dsk-link game1">查看视频</a>
+								</div>
+								<img src="images/game1.png" alt="" />
+							</div>
+						</div>
+						<div class="step">
+							<div class="dsk-circle">3/16</div>
+							<h2 class="dsk-circle-title">硬件交互</h2>
+							<div class="dsk-content">
+								<div class="dsk-info">
+									<h2>硬件交互</h2>
+									<p>使用Unity和Arduino开发板，接上各种传感器来进行游戏。共开发了三款游戏：一是跑酷游戏，通过陀螺仪控制角色左右移动并躲避障碍；二是类连连看音乐游戏，通过压力传感器进行输入，输入正确则播放音乐；三是造字游戏，通过红外传感器识别部首，并两两组合成汉字。</p>
+									<a href="#" class="dsk-link game2">查看视频</a>
+								</div>
+								<img src="images/game2.png" alt="" />
+							</div>
+						</div>
+
+						<!-- 2016 -->
+						<div class="step year">
+							<div class="dsk-titlenode">2016</div>
+							<div class="dsk-content">
+								<p class="dsk-year-info">初次接触Unity，开发了一款ARPG游戏</p>
+							</div>
+						</div>
+						<div class="step">
+							<div class="dsk-circle">05/16</div>
+							<h2 class="dsk-circle-title">ARPG游戏</h2>
+							<div class="dsk-content">
+								<div class="dsk-info">
+									<h2>ARPG游戏</h2>
+									<p>学习完官方教程“噩梦射手”后做的。游戏是在一个墓园内，会源源不断产生骷髅和僵尸，通过击杀他们来获取积分，最后根据杀敌数产生排行榜。还为游戏添加了EasyTouch，并编译了Android版。</p>
+								</div>
+								<img src="images/game3.png" alt="" />
+							</div>
+						</div>
+						<!-- 2015 -->
+						<div class="step year">
+							<div class="dsk-titlenode">2015</div>
+							<div class="dsk-content">
+								<p class="dsk-year-info">这一年，学习开发了h5游戏和安卓游戏。</p>
+							</div>
+						</div>
+						<div class="step">
+							<div class="dsk-circle">10/25</div>
+							<h2 class="dsk-circle-title">H5游戏</h2>
+							<div class="dsk-content">
+								<div class="dsk-info">
+									<h2>H5游戏</h2>
+									<p>初次接触canvas，没有依靠任何插件、引擎，使用纯js写出了flappybird。</p>
+									<a href="flappybird/index.html" class="dsk-link">试玩游戏</a>
+								</div>
+								<img src="images/game4.png" alt="" />
+							</div>
+						</div>
+						<div class="step">
+							<div class="dsk-circle">4/25</div>
+							<h2 class="dsk-circle-title">Android游戏</h2>
+							<div class="dsk-content">
+								<div class="dsk-info">
+									<h2>Android游戏</h2>
+									<p>利用课余时间做了2048和猜数字两个安卓小游戏。</p>
+								</div>
+								<img src="images/game5.png" alt="" />
+							</div>
+						</div>
+						<!-- 2014 -->
+						<div class="step year">
+							<div class="dsk-titlenode">2014</div>
+							<div class="dsk-content">
+								<p class="dsk-year-info">大学第一年，对游戏产生浓厚兴趣，在课设时选择了游戏项目。</p>
+							</div>
+						</div>
+						<div class="step">
+							<div class="dsk-circle">09/03</div>
+							<h2 class="dsk-circle-title">Cocos2d游戏</h2>
+							<div class="dsk-content">
+								<div class="dsk-info">
+									<h2>Cocos2d游戏</h2>
+									<p>初次接触Cocos2d，简单实现了Flappybird。</p>
+								</div>
+								<img src="images/game7.png" alt="" />
+							</div>
+						</div>
+						<div class="step">
+							<div class="dsk-circle">07/12</div>
+							<h2 class="dsk-circle-title">MFC游戏</h2>
+							<div class="dsk-content">
+								<div class="dsk-info">
+									<h2>MFC游戏</h2>
+									<p>利用MFC开发了一款迷宫类游戏。并独立写出了迷宫生成算法。</p>
+								</div>
+								<img src="images/game8.jpg" alt="" />
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
+			<div class="homepage-block"></div>
 		</div>
 
+		<div class="block"></div>
+		<video id="video" src="" controls="controls" autoplay="autoplay"></video>
 	</body>
-	<script>
-		var reg = location.search.match(/ts=([^&]*)/),
-			ts = reg && reg[1] || 'flipClockY',
-			a = new pageSwitch('pages', {
-				duration: 1000,
-				start: 0,
-				direction: 0,
-				loop: true,
-				ease: /flip(?!Paper)/.test(ts) ? 'bounce' : 'ease',
-				transition: ts,
-				mouse: true,
-				mousewheel: true,
-				arrowkey: true
-			})
-	</script>
 
 </html>
