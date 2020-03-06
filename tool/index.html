@@ -11,7 +11,7 @@
 		<style type="text/css">
 			html,
 			body {
-				overflow: hidden;
+				[] overflow: hidden;
 				height: 100%;
 				text-align: center;
 			}
@@ -22,7 +22,7 @@
 
 			#content {
 				width: 400px;
-				height: 300px;
+				height: 280px;
 				margin: 300px auto;
 				padding-top: 5px;
 				background: -webkit-linear-gradient(0deg, #FFF6B7, #F6416C);
@@ -53,10 +53,13 @@
 				border: none;
 			}
 
+			#btn-get,
 			#btn-submit {
-				width: 200px;
+				display: inline-block;
+				text-align: center;
+				width: 100px;
 				height: 40px;
-				margin: 20px auto;
+				margin: 30px 15px 0 15px;
 				border-radius: 10px;
 				border: 0;
 				background: #F1EEFC;
@@ -67,7 +70,7 @@
 		<div id="content">
 			<div class="content-wrapper">
 				<div class="item">
-					<label for="">目标账号：</label><input type="text" name="" id="input-id" value="4" />
+					<label for="">目标账号：</label><input type="text" name="" id="input-id" value="137" />
 				</div>
 				<div class="item">
 					<label for="">期望金币：</label><input type="text" name="" id="input-gold" value="" />
@@ -76,13 +79,26 @@
 					<label for="">期望人气：</label><input type="text" name="" id="input-like" value="" />
 				</div>
 
-				<input type="submit" name="" id="btn-submit" value="确定" />
+				<input name="" id="btn-get" value="获取" />
+				<input type="submit" name="" id="btn-submit" value="修改" />
 			</div>
 		</div>
 
 		<script>
 			let getUrl = "https://lcdhtest.gameorange.com/api/getUserData";
 			let setUrl = "https://lcdhtest.gameorange.com/api/setuserdata";
+
+			$("#btn-get").click(function() {
+				let id = $("#input-id").val() || 0;
+				$.post(getUrl, {
+					uid: id
+				}, function(result) {
+					data = result.data;
+
+					$("#input-gold").val(data.data.userinfo.gold);
+					$("#input-like").val(data.data.userinfo.likeability);
+				});
+			});
 
 			$("#btn-submit").click(function() {
 				let id = $("#input-id").val() || 0;
@@ -108,7 +124,7 @@
 				$.post(setUrl, data, function(result) {
 					if (0 == result.errno) {
 						alert("修改成功");
-					}else{
+					} else {
 						alert("修改失败，请联系003号客服");
 					}
 				});
