@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>修改金币人气值</title>
+
+		<script src="https://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+
+		<link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.15.5/dist/bootstrap-table.min.css">
+		<script src="https://unpkg.com/bootstrap-table@1.15.5/dist/bootstrap-table.min.js"></script>
+		<style type="text/css">
+			html,
+			body {
+				overflow: hidden;
+				height: 100%;
+				text-align: center;
+			}
+
+			body {
+				background: linear-gradient(91deg, #f1eefc, #9dc6ff 70%, #a5bcff)
+			}
+
+			#content {
+				width: 400px;
+				height: 300px;
+				margin: 300px auto;
+				padding-top: 5px;
+				background: -webkit-linear-gradient(0deg, #FFF6B7, #F6416C);
+				border-radius: 10px;
+			}
+
+			.content-wrapper {
+				margin-top: 30px;
+			}
+
+			.item {
+				margin: 20px 0 0 -20px;
+			}
+
+			.item select {
+				width: 258px;
+				height: 35px;
+				border-radius: 10px;
+				outline: none;
+			}
+
+			.item input {
+				width: 240px;
+				height: 35px;
+				border-radius: 10px;
+				padding: 0 10px;
+				outline: none;
+				border: none;
+			}
+
+			#btn-submit {
+				width: 200px;
+				height: 40px;
+				margin: 20px auto;
+				border-radius: 10px;
+				border: 0;
+				background: #F1EEFC;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="content">
+			<div class="content-wrapper">
+				<div class="item">
+					<label for="">目标账号：</label><input type="text" name="" id="input-id" value="4" />
+				</div>
+				<div class="item">
+					<label for="">期望金币：</label><input type="text" name="" id="input-gold" value="" />
+				</div>
+				<div class="item">
+					<label for="">期望人气：</label><input type="text" name="" id="input-like" value="" />
+				</div>
+
+				<input type="submit" name="" id="btn-submit" value="确定" />
+			</div>
+		</div>
+
+		<script>
+			let getUrl = "https://lcdhtest.gameorange.com/api/getUserData";
+			let setUrl = "https://lcdhtest.gameorange.com/api/setuserdata";
+
+			$("#btn-submit").click(function() {
+				let id = $("#input-id").val() || 0;
+				let data;
+				$.post(getUrl, {
+					uid: id
+				}, function(result) {
+					console.log(result);
+					data = result.data;
+
+					var l = confirm("确定修改" + data.nickname + "的数据吗？");
+					if (l == true) {
+						setInfo(data);
+					}
+				});
+			});
+
+			function setInfo(data) {
+				let gold = $("#input-gold").val() || 1;
+				let like = $("#input-like").val() || 1;
+				data.data.userinfo.gold = gold;
+				data.data.userinfo.likeability = like;
+				$.post(setUrl, data, function(result) {
+					if (0 == result.errno) {
+						alert("修改成功");
+					}else{
+						alert("修改失败，请联系003号客服");
+					}
+				});
+			}
+		</script>
+
+	</body>
+</html>
