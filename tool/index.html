@@ -119,8 +119,9 @@
 			function setInfo(data) {
 				let gold = $("#input-gold").val() || 1;
 				let like = $("#input-like").val() || 1;
-				data.data.userinfo.gold = gold;
-				data.data.userinfo.likeability = like;
+				data.data.userinfo.gold = Number(gold);
+				data.data.userinfo.likeability = Number(like);
+				console.log(data.data);
 				$.post(setUrl, data, function(result) {
 					if (0 == result.errno) {
 						alert("修改成功");
